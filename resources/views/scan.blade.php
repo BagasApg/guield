@@ -26,13 +26,13 @@
 
 <body>
     <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="card">
-            <div class="card-body">
+        {{-- <div class="card"> --}}
+        <div class="border border-3 d-flex flex-column justify-content-between align-items-center rounded">
+            <p class="p-3 px-5 fs-1 m-0 align-middle">Scan here!</p>
+            <input id="scan" style="opacity: 0;" class="position-absolute" type="text">
 
-                <input id="scan" style="opacity: 0;" type="text">
-
-            </div>
         </div>
+        {{-- </div> --}}
     </div>
 </body>
 
@@ -46,6 +46,7 @@
         if (e.which == 13) {
             var scanInput = $('#scan').val();
             // alert(scanInput);
+            console.log("you searched for:" + scanInput);
             console.log("loading...");
             $('#scan').val('');
             $.ajaxSetup({
@@ -64,9 +65,11 @@
                 success: function(res) {
                     if (res == 0) {
                         console.log("not found!");
+                        alert("lah");
                         return;
                     }
                     console.log("found!");
+                    alert("chiuy");
                 }
             });
 
