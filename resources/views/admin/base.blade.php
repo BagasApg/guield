@@ -139,16 +139,16 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item">
+            <li class="menu-item {{ request()->is('admin*') && request()->is('admin/dashboard*') ? 'active' : 'walawe' }}">
               <a href="index.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics" class="{{request()->is('admin*') ? 'active' : 'walawe'}}">Dashboard</div>
+                <div data-i18n="Dashboard">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ request()->is('admin*') && request()->is('admin/events*') ? 'active' : 'walawe' }}">
               <a href="index.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Events</div>
+                <div data-i18n="Events">Events</div>
               </a>
             </li>
             

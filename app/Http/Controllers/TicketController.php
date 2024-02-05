@@ -16,6 +16,7 @@ class TicketController extends Controller
             return 0;
         } 
         
-        return 1;
+        $ticket['status'] = 1;
+        return response()->json($ticket);
     }
 }

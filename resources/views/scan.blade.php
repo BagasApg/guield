@@ -65,11 +65,12 @@
                 success: function(res) {
                     if (res == 0) {
                         console.log("not found!");
-                        alert("details with unique :\n" + scanInput + "\nDoes not exist!");
+                        alert("details with unique :\n" + scanInput + "\ndoes not exist!");
                         return;
                     }
                     console.log("found!");
-                    alert("details with unique :\n" + scanInput + "\nFound!");
+                    alert("details with unique :\n" + scanInput + "\n" + res.unique + "\nFound!\n"
+                            + res.name);
                     // alert("chiuy");
                 }
             });

@@ -23,5 +23,5 @@ Route::get('/onspot', function () {
 
 Route::post('/process-scan', [TicketController::class, 'scan'])->name('ticket-scan');
 
-Route::get('/admin/', [DashboardController::class, 'redirectToIndex']);
+Route::get('/admin', [DashboardController::class, 'redirectToIndex']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
