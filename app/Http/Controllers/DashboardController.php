@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function redirectToIndex(){
-        return $this->function
+        return $this->index();
     }
 
     public function index(){
