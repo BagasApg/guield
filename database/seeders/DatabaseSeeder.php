@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
-use App\Models\Ticket;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Event;
+use App\Models\Ticket;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $events = [
+            (object)[
+                'name' => 'Diesnatalis 2024',
+                'date' => Carbon::now(),
+                'time' => Carbon::now()->toTimeString(),
+                'quota' => 250
+            ],
+            (object)[
+                'name' => 'Open Air 2k24',
+                'date' => Carbon::yesterday(),
+                'time' => Carbon::yesterday()->toTimeString(),
+                'quota' => 250
+            ],
+        ];
 
         $tickets = [
             (object)[
@@ -55,6 +71,15 @@ class DatabaseSeeder extends Seeder
             $t->name = $ticket->name;
             $t->registered_at = $ticket->registered_at;
             $t->save();
+        }
+
+        foreach ($events as $event) {
+            $e = new Event();
+            $e->name = $event->name;
+            $e->date = $event->date;
+            $e->time = $event->time;
+            $e->quota = $event->quota;
+            $e->save();
         }
     }
 }
