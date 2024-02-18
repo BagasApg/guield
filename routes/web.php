@@ -16,7 +16,8 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::domain('{game}.localhost')->group(function(){
-    Route::get('{title:slug}/wiki/{wiki:slug}', [WikiController::class, 'index']);
+Route::domain('{community}.localhost')->group(function(){
+    Route::get('/wiki/', [WikiController::class, 'home'])->name('wiki.home');
+    Route::get('/wiki/{wiki:slug}', [WikiController::class, 'index']);
 
 });

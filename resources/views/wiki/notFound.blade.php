@@ -4,7 +4,6 @@
 
 @section('content')
 
-    Currently in {{ $game }}
     <div class="card">
         <div class="card-head"></div>
         <div class="card-body">
